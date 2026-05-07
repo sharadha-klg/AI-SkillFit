@@ -1,17 +1,17 @@
-<img width="1470" height="920" alt="Screenshot 2026-05-07 at 5 40 16 PM" src="https://github.com/user-attachments/assets/957690e6-2c30-4c43-ab1b-4659db708e1a" />AI SkillFit : Multilingual Video-Based Workforce Assessment & Fitment Platform 
+AI SkillFit : Multilingual Video-Based Workforce Assessment & Fitment Platform 
 
 AI SkillFit is an AI-powered workforce fitment platform designed to evaluate candidates through video-based assessments and skill analysis. The platform helps organizations identify the most suitable candidates by analyzing communication, technical skills, confidence, and overall performance.
 
-🚀 Features
-🎥 Video-based candidate assessment
-🤖 AI-powered skill evaluation
-📊 Performance analytics dashboard
-🧠 Candidate scoring and ranking
-📁 Resume and profile analysis
-💻 Modern responsive UI
+ Features
+ -- Video-based candidate assessment 
+ -- AI-powered skill evaluation
+ -- Performance analytics dashboard
+ -- Candidate scoring and ranking
+ -- Resume and profile analysis
+ -- Modern responsive UI
 ⚡ Fast and interactive experience using Vite + React
 
-🛠️ Tech Stack
+ Tech Stack
 Frontend
 React.js
 TypeScript
@@ -25,7 +25,7 @@ NLP Concepts
 Database
 SQL / Database Integration
 
-📂 Project Structure
+ Project Structure
 AI-SkillFit/
 │
 ├── public/
@@ -40,7 +40,7 @@ AI-SkillFit/
 ├── vite.config.ts
 └── README.md
 
-⚙️ Installation & Setup
+ Installation & Setup
 Prerequisites
 
 Make sure the following are installed:
@@ -48,28 +48,28 @@ Make sure the following are installed:
 Node.js (v18 or above recommended)
 npm
 
-📥 Clone the Repository
+ Clone the Repository
 git clone https://github.com/sharadha-klg/AI-SkillFit.git
 
-📁 Navigate to Project Directory
+ Navigate to Project Directory
 cd AI-SkillFit
 
-📦 Install Dependencies
+ Install Dependencies
 npm install
 
 ▶️ Run the Development Server
 npm run dev
 
-🌐 Open in Browser
+ Open in Browser
 
 After running the project, open:
 
 http://localhost:5173
 
-🏗️ Build for Production
+ Build for Production
 npm run build
 
-👀 Preview Production Build
+ Preview Production Build
 npm run preview
 
 Future Enhancements
