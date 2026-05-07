@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 49% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 209 45% 11%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 209 45% 11%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 150 56% 60%;
+    --primary-foreground: 160 30% 8%;
+    --primary-glow: 150 56% 70%;
+
+    --secondary: 208 39% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 208 28% 14%;
+    --muted-foreground: 202 18% 72%;
+
+    --accent: 202 81% 69%;
+    --accent-foreground: 208 100% 12%;
+
+    --success: 150 56% 60%;
+    --warning: 38 92% 55%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 207 31% 22%;
+    --input: 208 34% 14%;
+    --ring: 202 81% 69%;
+
+    --radius: 0.85rem;
+
+    --gradient-hero: linear-gradient(to right, #004E8F, #72C6EF);
+    --gradient-app: radial-gradient(circle at top center, hsl(var(--accent) / 0.18), transparent 32%), linear-gradient(180deg, hsl(207 100% 12%) 0%, hsl(var(--background)) 42%, hsl(210 49% 5%) 100%);
+    --gradient-shell: radial-gradient(circle at top center, hsl(var(--accent) / 0.08), transparent 24%), linear-gradient(180deg, hsl(208 57% 12%) 0%, hsl(var(--background)) 22%, hsl(210 49% 5%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(150 56% 60%), hsl(202 81% 69%));
+    --gradient-card: linear-gradient(135deg, hsl(209 46% 14% / 0.84), hsl(208 34% 12% / 0.66));
+    --gradient-glow: radial-gradient(ellipse at top, hsl(202 81% 69% / 0.18), transparent 70%);
+
+    --shadow-glow: 0 0 60px hsl(202 81% 69% / 0.22);
+    --shadow-card: 0 12px 40px hsl(210 55% 3% / 0.52);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    background-image: var(--gradient-app);
+    background-attachment: fixed;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+  }
+  .liquid-glass {
+    position: relative;
+    background: rgba(255, 255, 255, 0.01);
+    background-blend-mode: luminosity;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    border-radius: 1.25rem;
+  }
+  .liquid-glass::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.4px;
+    border-radius: inherit;
+    background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.05));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero-bg {
+    background: var(--gradient-app);
+    background-attachment: fixed;
+  }
+  .app-shell {
+    background: var(--gradient-shell);
+    background-attachment: fixed;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.4); }
+  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.7); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-fade-up { animation: fade-up 0.6s ease-out; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
